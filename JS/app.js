@@ -58,12 +58,12 @@ function checkAns (idx) {
         }
     }else{
         h3.innerText = `Game Over! Press any key to restart`;
+        reset();
     }
 }
 
 function btnPress () {
     let btn = this;
-    console.log(btn);
     userFlash(btn);
 
     userColor = btn.getAttribute("id");
@@ -75,3 +75,11 @@ let allBtns = document.querySelectorAll(".btn");
 for(btn of allBtns){
     btn.addEventListener("click", btnPress)
 };
+
+
+function reset() {
+    started = false;
+    gameSeq = [];
+    userSeq = [];
+    level = 0;
+}

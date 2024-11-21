@@ -5,6 +5,7 @@ let btns = ["yellow", "red", "purple", "green"];
 
 let started = false;
 let level = 0;
+let h4 = document.querySelector("h4")
 
 let h3 = document.querySelector("h3");
 
@@ -59,12 +60,14 @@ function checkAns (idx) {
     }else{
         h3.innerHTML = `Game Over! Your Score was <b>${level}<b> <br> Press any key to start.`;
         document.querySelector("body").style.backgroundColor = "red";
+        h4.innerText = `High Score: ${level}`;
         setTimeout(function(){
             document.querySelector("body").style.backgroundColor = "white";
         }, 150)
         reset();
     }
 }
+
 
 function btnPress () {
     let btn = this;
@@ -86,4 +89,5 @@ function reset() {
     gameSeq = [];
     userSeq = [];
     level = 0;
+    hiScore();
 }
